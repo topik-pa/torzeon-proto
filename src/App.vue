@@ -1,28 +1,30 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <cmp-header/>
+    <div class="container">
+      <router-view/>
+      <cmp-footer/>
+    </div>   
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import CmpHeader from './components/shared/CmpHeader.vue'
+import CmpFooter from './components/shared/CmpFooter.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    CmpHeader,
+    CmpFooter
   }
 }
 </script>
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
