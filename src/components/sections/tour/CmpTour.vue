@@ -1,12 +1,12 @@
 <template>
 <div>
-  PATH
+  TOUR
 </div>
 </template>
 
 <script>
 export default {
-  name: 'CmpPath',
+  name: 'CmpTour',
   props: {
   }
 }

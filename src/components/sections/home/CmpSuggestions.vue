@@ -1,8 +1,11 @@
 <template>
-  <div class="card-deck mb-3 text-center">
-
-    <cmp-card v-for="tour in tours" :key="tour.id" :tour="tour"></cmp-card>
-
+  <div>
+    <div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+      <h2 class="display-5">Itinerari vicini a te</h2>
+    </div>
+    <div class="card-deck mb-3 text-center">
+      <cmp-card v-for="tour in tours" :key="tour.id" :tour="tour"></cmp-card>
+    </div>
   </div>
 </template>
 
@@ -19,6 +22,7 @@ export default {
       tours: [
         {
           id: 0,
+          active: true,
           name: 'Un sorso della Milano da bere',
           description: 'Un breve giro dei punti salienti della città meneghina',
           start: 'Stazione Centrale',
@@ -58,6 +62,7 @@ export default {
 
         {
           id: 1,
+          active: false,
           name: 'Hai mai visto i pellicani a Milano?',
           description: 'Un giro attraverso le curiosità di una Milano che non ti aspetti',
           start: 'Duomo di Milano',
@@ -92,8 +97,9 @@ export default {
 
         {
           id: 2,
+          active: false,
           name: 'Stasera? <br/> Teatro!',
-          description: 'Serata di cultura culinaria e teatrale',
+          description: 'Serata di cultura culinaria e teatrale nel centro cittadino',
           start: 'Teatro alla Scala',
           end: 'Piazza Gae Aulenti',
           price: '140.00',
