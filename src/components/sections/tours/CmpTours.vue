@@ -1,14 +1,13 @@
 <template>
 <div>
-  TOUR
+  TOURS
 </div>
 </template>
 
 <script>
 export default {
-  name: 'CmpTour',
+  name: 'CmpTours',
   props: {
-    tour: Object,
   }
 }
 </script>

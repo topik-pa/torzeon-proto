@@ -8,6 +8,7 @@
           {{tour.description}}
         </p>
         <h3 class="card-title pricing-card-title">€{{tour.price}} <small class="text-muted">/ persona</small></h3>
+        <h4 v-if="highlight == 'rating'" class="card-title pricing-card-title">Rating: {{tour.rating}} <small class="text-muted">/ 5</small></h4>
         <ul class="list-unstyled mt-3 mb-4">
           <li v-for="checkpoint in tour.checkpoints" :key="checkpoint.id">{{checkpoint.name}}</li>
         </ul>
@@ -20,7 +21,8 @@
 export default {
   name: 'CmpCard',
   props: {
-    tour: Object
+    tour: Object,
+    highlight: String
   }
 }
 </script>

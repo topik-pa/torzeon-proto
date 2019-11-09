@@ -1,21 +1,27 @@
 <template>
   <div> 
     <cmp-intro/>
-    <cmp-suggestions/>
-    <cmp-find-tour/>
+    <cmp-find-by/>
+    <cmp-tours-near-you/>
+    <cmp-top-tours/>
+    <cmp-browse-all/>
   </div>
 </template>
 
 <script>
 import CmpIntro from './CmpIntro.vue'
-import CmpSuggestions from './CmpSuggestions.vue'
-import CmpFindTour from './CmpFindTour.vue'
+import CmpFindBy from './CmpFindBy.vue'
+import CmpToursNearYou from './CmpToursNearYou.vue'
+import CmpTopTours from './CmpTopTours.vue'
+import CmpBrowseAll from './CmpBrowseAll.vue'
 export default {
   name: 'CmpHome',
   components: {
     CmpIntro,
-    CmpSuggestions,
-    CmpFindTour
+    CmpFindBy,
+    CmpToursNearYou,
+    CmpTopTours,
+    CmpBrowseAll
   }
 }
 </script>
