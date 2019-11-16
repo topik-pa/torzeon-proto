@@ -12,7 +12,7 @@
         <ul class="list-unstyled mt-3 mb-4">
           <li v-for="checkpoint in tour.checkpoints" :key="checkpoint.id">{{checkpoint.name}}</li>
         </ul>
-        <router-link to="/tour" class="btn btn-lg btn-block btn-primary">Inizia adesso</router-link>
+        <router-link :to="{ name: 'tour', params: { id: tour.id } }" class="btn btn-lg btn-block btn-primary">Inizia adesso</router-link>
       </div>
     </div>
 </template>

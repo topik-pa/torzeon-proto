@@ -17,9 +17,9 @@ Vue.use(VueRouter);
 Vue.config.productionTip = false;
 
 const routes = [
-  { path: '/', component: CmpHome },
-  { path: '/tour', component: CmpTour },
-  { path: '/tours', component: CmpTours }
+  { path: '/', name: 'home', component: CmpHome },
+  { path: '/tour/:id', name: 'tour', component: CmpTour },
+  { path: '/tours', name: 'tours', component: CmpTours }
 ];
 
 const router = new VueRouter({
@@ -44,16 +44,17 @@ const store = new Vuex.Store({
         cover: 'http://www.italia.it/fileadmin/src/img/cluster_gallery/Citta_d_arte_Milano/Duomo-Milano.jpg',
         stops: [
           {
-            id: 0,
+            id: 0,            
             name: 'Stazione Centrale',
             type: 'public', 
             gmaps: 'https://goo.gl/maps/4UesoB2u579WrBm68',
             path: 'https://goo.gl/maps/FY7REQsgZu9Ridmx5',
-            description: '',
+            description: 'Il momento più significativo...',
+            checked: false,
             links: [
               {
-                url: '',
-                name: ''
+                url: 'https://it.wikipedia.org/wiki/Misato_Katsuragi',
+                name: 'Info da Wikipedia'
               }
             ],
             images: [
@@ -61,7 +62,7 @@ const store = new Vuex.Store({
                 id: 0,
                 url: 'http://www.italia.it/fileadmin/src/img/cluster_gallery/Citta_d_arte_Milano/Duomo-Milano.jpg',
                 alt: '',
-                description: ''
+                description: 'Una bella immagine'
               }
             ]           
           },
@@ -72,6 +73,7 @@ const store = new Vuex.Store({
             gmaps: 'https://goo.gl/maps/4UesoB2u579WrBm68',
             path: 'https://goo.gl/maps/FY7REQsgZu9Ridmx5', 
             description: '',
+            checked: false,
             links: [
               {
                 url: '',
@@ -94,6 +96,7 @@ const store = new Vuex.Store({
             gmaps: 'https://goo.gl/maps/4UesoB2u579WrBm68',
             path: 'https://goo.gl/maps/FY7REQsgZu9Ridmx5',
             description: '',
+            checked: false,
             links: [
               {
                 url: '',
@@ -116,6 +119,7 @@ const store = new Vuex.Store({
             gmaps: 'https://goo.gl/maps/4UesoB2u579WrBm68',
             path: 'https://goo.gl/maps/FY7REQsgZu9Ridmx5',  
             description: '',
+            checked: false,
             links: [
               {
                 url: '',
@@ -171,6 +175,7 @@ const store = new Vuex.Store({
             gmaps: 'https://goo.gl/maps/4UesoB2u579WrBm68',
             path: 'https://goo.gl/maps/FY7REQsgZu9Ridmx5', 
             description: '',
+            checked: false,
             links: [
               {
                 url: '',
@@ -193,6 +198,7 @@ const store = new Vuex.Store({
             gmaps: 'https://goo.gl/maps/4UesoB2u579WrBm68',
             path: 'https://goo.gl/maps/FY7REQsgZu9Ridmx5',
             description: '',
+            checked: false,
             links: [
               {
                 url: '',
@@ -207,6 +213,7 @@ const store = new Vuex.Store({
             gmaps: 'https://goo.gl/maps/4UesoB2u579WrBm68',
             path: 'https://goo.gl/maps/FY7REQsgZu9Ridmx5', 
             description: '',
+            checked: false,
             links: [
               {
                 url: '',
@@ -219,6 +226,8 @@ const store = new Vuex.Store({
             name: 'Ristorante da Cencio',
             type: 'private',  
             gmaps: 'https://goo.gl/maps/4UesoB2u579WrBm68',
+            description: '',
+            checked: false,
             images: [
               {
                 id: 0,
@@ -254,6 +263,7 @@ const store = new Vuex.Store({
             gmaps: 'https://goo.gl/maps/4UesoB2u579WrBm68',
             path: 'https://goo.gl/maps/FY7REQsgZu9Ridmx5',
             description: '',
+            checked: false,
             links: [
               {
                 url: '',
@@ -276,6 +286,7 @@ const store = new Vuex.Store({
             gmaps: 'https://goo.gl/maps/4UesoB2u579WrBm68',
             path: 'https://goo.gl/maps/FY7REQsgZu9Ridmx5',  
             description: '',
+            checked: false,
             links: [
               {
                 url: '',
@@ -288,6 +299,7 @@ const store = new Vuex.Store({
             name: 'Ristorante al Bauscia',
             type: 'private', 
             gmaps: 'https://goo.gl/maps/4UesoB2u579WrBm68',
+            checked: false,
           },
         ],
         duration: '4h 20m',
