@@ -3,6 +3,9 @@
     <h3>{{stop.name}}</h3>
 
     <h5><a target="_blank" :href="stop.gmaps">See on Gmaps</a></h5>
+
+    <router-link v-if="stop.hasOwnPage" :to="{ name: 'shop', params: { id: stop.id } }" class="btn btn-lg btn-block btn-primary">Pagina dedicata</router-link>
+
     <p>{{stop.description}}</p>
 
     <cmp-stop-image v-for="image in stop.images" :key="image.id" :image="image"></cmp-stop-image>
@@ -38,7 +41,7 @@ export default {
   },
   methods: {
     checkStop() {
-      this.stop.checked = true
+      this.stop.checked = true;      
     }
   },
   computed: {

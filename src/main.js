@@ -9,6 +9,7 @@ import 'bootstrap-vue/dist/bootstrap-vue.css';
 import CmpHome from './components/sections/home/CmpHome.vue';
 import CmpTour from './components/sections/tour/CmpTour.vue';
 import CmpTours from './components/sections/tours/CmpTours.vue';
+import CmpShop from './components/sections/shop/CmpShop.vue';
 
 Vue.use(Vuex)
 Vue.use(BootstrapVue);
@@ -19,7 +20,8 @@ Vue.config.productionTip = false;
 const routes = [
   { path: '/', name: 'home', component: CmpHome },
   { path: '/tour/:id', name: 'tour', component: CmpTour },
-  { path: '/tours', name: 'tours', component: CmpTours }
+  { path: '/tours', name: 'tours', component: CmpTours },
+  { path: '/shop/:id', name: 'shop', component: CmpShop },
 ];
 
 const router = new VueRouter({
@@ -42,6 +44,8 @@ const store = new Vuex.Store({
         roundTrip: false, 
         city: 'Milano',
         cover: 'http://www.italia.it/fileadmin/src/img/cluster_gallery/Citta_d_arte_Milano/Duomo-Milano.jpg',
+        promocode: 'MARC',
+        revealedPromocode: '',
         stops: [
           {
             id: 0,            
@@ -51,6 +55,8 @@ const store = new Vuex.Store({
             path: 'https://goo.gl/maps/FY7REQsgZu9Ridmx5',
             description: 'Il momento più significativo...',
             checked: false,
+            hasOwnPage: false,
+            promo: 'M',
             links: [
               {
                 url: 'https://it.wikipedia.org/wiki/Misato_Katsuragi',
@@ -74,6 +80,8 @@ const store = new Vuex.Store({
             path: 'https://goo.gl/maps/FY7REQsgZu9Ridmx5', 
             description: '',
             checked: false,
+            hasOwnPage: false,
+            promo: 'A',
             links: [
               {
                 url: '',
@@ -97,6 +105,8 @@ const store = new Vuex.Store({
             path: 'https://goo.gl/maps/FY7REQsgZu9Ridmx5',
             description: '',
             checked: false,
+            hasOwnPage: false,
+            promo: 'R',
             links: [
               {
                 url: '',
@@ -120,6 +130,8 @@ const store = new Vuex.Store({
             path: 'https://goo.gl/maps/FY7REQsgZu9Ridmx5',  
             description: '',
             checked: false,
+            hasOwnPage: true,
+            promo: 'C',            
             links: [
               {
                 url: '',
@@ -140,6 +152,10 @@ const store = new Vuex.Store({
             name: 'Castello Sforzesco',
             type: 'public', 
             gmaps: 'https://goo.gl/maps/4UesoB2u579WrBm68',
+            description: '',
+            checked: false,
+            hasOwnPage: false,
+            promo: '',
             images: [
               {
                 id: 0,
@@ -176,6 +192,7 @@ const store = new Vuex.Store({
             path: 'https://goo.gl/maps/FY7REQsgZu9Ridmx5', 
             description: '',
             checked: false,
+            hasOwnPage: false,
             links: [
               {
                 url: '',
@@ -199,6 +216,7 @@ const store = new Vuex.Store({
             path: 'https://goo.gl/maps/FY7REQsgZu9Ridmx5',
             description: '',
             checked: false,
+            hasOwnPage: false,
             links: [
               {
                 url: '',
@@ -214,6 +232,7 @@ const store = new Vuex.Store({
             path: 'https://goo.gl/maps/FY7REQsgZu9Ridmx5', 
             description: '',
             checked: false,
+            hasOwnPage: false,
             links: [
               {
                 url: '',
@@ -228,6 +247,7 @@ const store = new Vuex.Store({
             gmaps: 'https://goo.gl/maps/4UesoB2u579WrBm68',
             description: '',
             checked: false,
+            hasOwnPage: false,
             images: [
               {
                 id: 0,
@@ -264,6 +284,7 @@ const store = new Vuex.Store({
             path: 'https://goo.gl/maps/FY7REQsgZu9Ridmx5',
             description: '',
             checked: false,
+            hasOwnPage: false,
             links: [
               {
                 url: '',
@@ -287,6 +308,7 @@ const store = new Vuex.Store({
             path: 'https://goo.gl/maps/FY7REQsgZu9Ridmx5',  
             description: '',
             checked: false,
+            hasOwnPage: false,
             links: [
               {
                 url: '',
@@ -300,11 +322,46 @@ const store = new Vuex.Store({
             type: 'private', 
             gmaps: 'https://goo.gl/maps/4UesoB2u579WrBm68',
             checked: false,
+            hasOwnPage: false,
           },
         ],
         duration: '4h 20m',
         type: 'Culturale',
         slug: 'itinerario-milano-teatro-e-aperitivo'
+      }
+    ],
+    shops: [
+      {
+        id: 3,
+        name: 'Vecchia Brera',
+        verified: true,
+        address: '',
+        description: '',
+        location: '',
+        amenities: {
+          wifi: true,
+          conditioning: true,
+          promotions: true,
+          garden: false,
+          terrace: false,
+          deor: true,
+          handicapp: true
+        },
+        languages: {
+          italian: true,
+          english: true,
+          german: false,
+          chinese: false,
+        },
+        images: [
+          {
+            id: 0,
+            url: 'http://www.italia.it/fileadmin/src/img/cluster_gallery/Citta_d_arte_Milano/Duomo-Milano.jpg',
+            alt: '',
+            description: 'Una bella immagine'
+          }
+        ]
+
       }
     ]
   },
