@@ -4,11 +4,10 @@
       <img :src="tour.cover" height="140"/>
     </router-link>
       <div class="description">
-        <h2>{{tour.name}}</h2>
-        <p>{{tour.description}}</p>
-        <router-link :to="{ name: 'tour', params: { id: tour.id } }" class="btn btn-primary">Inizia adesso</router-link>
+        <h2 v-html="tour.name"></h2>
+        <p v-html="tour.description"></p>
+        <router-link :to="{ name: 'tour', params: { id: tour.id } }" class="btn btn-primary" :class="{disabled: !tour.active}">Start this tour!</router-link>
       </div>
-    
   </div>
 </template>
 
@@ -26,10 +25,7 @@ export default {
    padding: 1rem;
    display: flex;
  }
-
  .description {
    padding-left: 2em;
  }
-
-
 </style>

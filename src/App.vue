@@ -27,4 +27,17 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
 }
+
+section {
+  margin: 3em 0;
+}
+
+section p {
+  font-style: italic;
+}
+
+a.disabled {
+  color: gray;
+  pointer-events: none;
+}
 </style>

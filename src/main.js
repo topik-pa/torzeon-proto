@@ -35,8 +35,8 @@ const store = new Vuex.Store({
       {
         id: 0,
         active: true,
-        name: 'Un sorso della Milano da bere',
-        description: 'Un breve giro dei punti salienti della città meneghina',
+        name: 'A first taste of Milan',
+        description: 'A short time trip around the main places on the city center with a taste of a delicious cr&ecirc;pe Milan style!',
         start: 'Stazione Centrale',
         end: 'Castello Sforzesco',
         price: '16.00',
@@ -44,8 +44,6 @@ const store = new Vuex.Store({
         roundTrip: false, 
         city: 'Milano',
         cover: 'http://www.italia.it/fileadmin/src/img/cluster_gallery/Citta_d_arte_Milano/Duomo-Milano.jpg',
-        promocode: 'MARC',
-        revealedPromocode: '',
         stops: [
           {
             id: 0,            
@@ -53,22 +51,38 @@ const store = new Vuex.Store({
             type: 'public', 
             gmaps: 'https://goo.gl/maps/4UesoB2u579WrBm68',
             path: 'https://goo.gl/maps/FY7REQsgZu9Ridmx5',
-            description: 'Il momento più significativo...',
+            description: 'Here we are in the first step of our journey... <br/> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id sodales ex, nec mollis tortor. Proin ac dictum nunc. Nulla id justo varius, auctor elit ac, tristique erat.',
             checked: false,
             hasOwnPage: false,
             promo: 'M',
             links: [
               {
-                url: 'https://it.wikipedia.org/wiki/Misato_Katsuragi',
-                name: 'Info da Wikipedia'
+                url: 'https://it.wikipedia.org/wiki/Stazione_di_Milano_Centrale',
+                name: 'Stazione Centrale (from Wikipedia)'
+              },
+              {
+                url: 'https://www.esquire.com/it/lifestyle/viaggi/a19151611/stazione-centrale-milano-curiosita/',
+                name: 'Stazione Centrale (from Esquire)'
+              },
+              {
+                url: 'https://www.panorama.it/cultura/arte-idee/michelangelo-pistoletto-spiega-la-sua-mela-reintegrata/',
+                name: 'The apple (from Panorama)'
               }
             ],
             images: [
               {
                 id: 0,
-                url: 'http://www.italia.it/fileadmin/src/img/cluster_gallery/Citta_d_arte_Milano/Duomo-Milano.jpg',
-                alt: '',
-                description: 'Una bella immagine'
+                name: 'Stazione Centrale main building',
+                url: 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/gettyimages-923042218-1520434856.jpg?crop=1.00xw:0.847xh;0,0.0987xh&resize=480:*',
+                alt: 'First image of stazione Centrale',
+                description: 'The station was build in the... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id sodales ex, nec mollis tortor. Proin ac dictum nunc. Nulla id justo varius, auctor elit ac, tristique erat.'
+              },
+              {
+                id: 1,
+                name: 'The apple monument',
+                url: 'https://www.artribune.com/wp-content/uploads/2016/03/La-Mela-Reintegrata-di-Pistoletto-in-Piazza-Duca-dAosta.jpg',
+                alt: 'Second image of stazione Centrale',
+                description: 'The big apple of Stazione Centrale... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id sodales ex, nec mollis tortor. Proin ac dictum nunc.'
               }
             ]           
           },
@@ -78,22 +92,34 @@ const store = new Vuex.Store({
             type: 'public', 
             gmaps: 'https://goo.gl/maps/4UesoB2u579WrBm68',
             path: 'https://goo.gl/maps/FY7REQsgZu9Ridmx5', 
-            description: '',
+            description: 'One of the most famous... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id sodales ex, nec mollis tortor. Proin ac dictum nunc. Nulla id justo varius, auctor elit ac, tristique erat.',
             checked: false,
             hasOwnPage: false,
             promo: 'A',
             links: [
               {
-                url: '',
-                name: ''
+                url: 'http://www.teatroallascala.org/it/index.html',
+                name: 'Teatro alla Scala (official site)'
+              },
+              {
+                url: 'http://www.teatroallascala.org/it/index.html',
+                name: 'Teatro alla Scala (Wikipedia)'
               }
             ],
             images: [
               {
                 id: 0,
-                url: 'http://www.italia.it/fileadmin/src/img/cluster_gallery/Citta_d_arte_Milano/Duomo-Milano.jpg',
-                alt: '',
-                description: ''
+                name: 'Teatro alla Scala main building',
+                url: 'https://quifinanza.files.wordpress.com/2019/03/teatro-alla-scala.jpg',
+                alt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id sodales ex, nec mollis tortor.'
+              },
+              {
+                id: 1,
+                name: 'Teatro alla Scala interiors',
+                url: 'https://onanotiziarioamianto.it/wp-content/uploads/2019/07/teatro-Scala.jpg',
+                alt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id sodales ex, nec mollis tortor.'
               }
             ]             
           },
@@ -154,7 +180,7 @@ const store = new Vuex.Store({
             gmaps: 'https://goo.gl/maps/4UesoB2u579WrBm68',
             description: '',
             checked: false,
-            hasOwnPage: false,
+            hasOwnPage: false, 
             promo: '',
             images: [
               {

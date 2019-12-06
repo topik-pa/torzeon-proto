@@ -1,10 +1,9 @@
 <template>
-<div>
-  <div>
-    <img :src="image.url" :alt="image.alt"/>
-    <p>{{image.description}}</p>
-  </div>
-</div>
+  <section>
+      <img :src="image.url" :alt="image.alt"/>
+      <h5>{{image.name}}</h5>
+      <p>{{image.description}}</p>
+  </section>
 </template>
 
 <script>

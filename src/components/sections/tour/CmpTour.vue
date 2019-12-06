@@ -2,8 +2,8 @@
 <div>
 
   <div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-    <h1 class="display-5">{{tour.name}}</h1>
-    <h2 class="display-5">{{tour.description}}</h2>
+    <h1 class="display-5" v-html="tour.name"></h1>
+    <h2 class="display-5" v-html="tour.description"></h2>
     <img :src="tour.cover" alt="" class="img-fluid"/>
 
 
@@ -23,12 +23,12 @@
     </div>
 
     <div>
-        <div v-if="tour.roundTrip">Round</div>
-        <div v-else>Linear</div>
+        <div v-if="tour.roundTrip">Round trip</div>
+        <div v-else>Linear trip</div>
     </div>
 
     <div class="mt-3">
-      <button @click="showAll" type="button" class="btn btn-primary">START</button>
+      <button @click="showAll" type="button" class="btn btn-primary" :class="{disabled: full}">START</button>
     </div>
   </div>
   <div  v-if="full" class="px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
@@ -36,7 +36,7 @@
   </div>
 
   <div v-if="full" class="mx-auto text-center paths">
-    Promocode: 
+    Promocode for "{{privateStop.name}}": 
     <span v-for="stop in stopsWPromo" :key="stop.promo">
       <span v-if="stop.checked">{{stop.promo}}</span>
       <span v-else>*</span>
@@ -47,8 +47,8 @@
       </div>
     </div>
     <span v-for="stop in tour.stops" :key="stop.id">
-      <span v-if="stop.checked">*</span>
-      <span v-else>O</span>
+      <span v-if="stop.checked">&ofcir;</span>
+      <span v-else>&olcir;</span>
     </span>
   </div>
 </div>
@@ -91,6 +91,9 @@ export default {
     },
     stopsWPromo() {
       return this.tour.stops.filter((stop) => stop.promo);
+    },
+    privateStop() {
+      return this.tour.stops.filter((stop) => stop.type === 'private')[0];
     }
   },
   created () {
@@ -104,7 +107,7 @@ export default {
 
 <style scoped>
 .paths {
-  background-color: #fefefe;
+  background-color: #efefef;
   position: fixed;
   left: 0;
   right: 0;
