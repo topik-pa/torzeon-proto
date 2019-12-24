@@ -1,7 +1,7 @@
 <template>
   <section>
       <img :src="image.url" :alt="image.alt"/>
-      <h5>{{image.name}}</h5>
+      <h4>{{image.name}}</h4>
       <p>{{image.description}}</p>
   </section>
 </template>

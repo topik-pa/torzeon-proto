@@ -22,6 +22,9 @@ export default {
     CmpToursNearYou,
     CmpTopTours,
     CmpBrowseAll
+  },
+  mounted () {
+    window.scrollTo(0, 0)
   }
 }
 </script>

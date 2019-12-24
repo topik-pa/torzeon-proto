@@ -102,7 +102,7 @@ const store = new Vuex.Store({
                 name: 'Teatro alla Scala (official site)'
               },
               {
-                url: 'http://www.teatroallascala.org/it/index.html',
+                url: 'https://it.wikipedia.org/wiki/Teatro_alla_Scala',
                 name: 'Teatro alla Scala (Wikipedia)'
               }
             ],
@@ -157,7 +157,8 @@ const store = new Vuex.Store({
             description: '',
             checked: false,
             hasOwnPage: true,
-            promo: 'C',            
+            promo: 'C', 
+            action: 'promo',           
             links: [
               {
                 url: '',
@@ -182,6 +183,7 @@ const store = new Vuex.Store({
             checked: false,
             hasOwnPage: false, 
             promo: '',
+            action: 'last',
             images: [
               {
                 id: 0,
@@ -359,11 +361,12 @@ const store = new Vuex.Store({
     shops: [
       {
         id: 3,
-        name: 'Vecchia Brera',
+        name: 'Caffè Vecchia Brera',
         verified: true,
-        address: '',
-        description: '',
-        location: '',
+        address: 'Via dell’Orso, 20 – 20121 – Milano',
+        description: 'Un autentico bistrot in stile retrò parigino',
+        website: 'https://www.creperiacaffevecchiabrera.it/',
+        tel: '+39 02 86 46 16 95',
         amenities: {
           wifi: true,
           conditioning: true,
@@ -382,9 +385,24 @@ const store = new Vuex.Store({
         images: [
           {
             id: 0,
-            url: 'http://www.italia.it/fileadmin/src/img/cluster_gallery/Citta_d_arte_Milano/Duomo-Milano.jpg',
-            alt: '',
-            description: 'Una bella immagine'
+            name: 'The Cafè',
+            url: 'https://qul.imgix.net/483966d3-1592-48e0-8362-4acd21482c2d/354488_sld.jpg',
+            alt: 'An image description',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam aliquam ullamcorper leo, at mollis magna tempus sit amet. In hac habitasse platea dictumst.'
+          },
+          {
+            id: 1,
+            name: 'Menù',
+            url: 'https://b.zmtcdn.com/data/pictures/6/16300806/26fdfe96e84d7ad9e2ccd9ef77efe5c8_featured_v2.jpg',
+            alt: 'An image description',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam aliquam ullamcorper leo, at mollis magna tempus sit amet. In hac habitasse platea dictumst.'
+          },
+          {
+            id: 3,
+            name: 'Our suggestion',
+            url: 'https://media-cdn.tripadvisor.com/media/photo-s/0e/32/78/67/caffe-vecchia-brera.jpg',
+            alt: 'An image description',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam aliquam ullamcorper leo, at mollis magna tempus sit amet. In hac habitasse platea dictumst. <br> EUR 8.50'
           }
         ]
 

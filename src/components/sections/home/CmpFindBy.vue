@@ -4,9 +4,9 @@
       <h2 class="display-5">Find a tour</h2>
       <form class="form-inline">
         <div class="form-group">
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter location">
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter city or location">
         </div>
-        <button type="submit" class="btn btn-primary disabled">Find tour</button>
+        <button type="submit" class="btn btn-primary disabled" @click="submit">Find tour</button>
       </form>
     </div>
   </div>
@@ -16,6 +16,11 @@
 export default {
   name: 'CmpFindBy',
   components: {
+  },
+  methods: {
+    submit(e) {
+      e.preventDefault();      
+    }
   }
 }
 </script>

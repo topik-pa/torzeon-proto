@@ -5,8 +5,13 @@
       </div>
       <div class="card-body">
         <p v-html="tour.description"></p>
-        <h3 class="card-title pricing-card-title">&approx; €{{tour.price}} <small class="text-muted">/ each</small></h3>
-        <h4 v-if="highlight == 'rating'" class="card-title pricing-card-title">Rating: {{tour.rating}} <small class="text-muted">/ 5</small></h4>
+        <!--<h3 class="card-title pricing-card-title">&approx; €{{tour.price}} <small class="text-muted">/ each</small></h3>-->
+        
+        <h3 v-if="highlight == 'rating'" class="card-title pricing-card-title">Rating: {{tour.rating}} <small class="text-muted">/ 5</small></h3>
+        <div v-else>
+          <h3 class="card-title pricing-card-title"><small>Type: {{tour.type}}</small></h3>
+          <h3 class="card-title pricing-card-title"><small>Duration: &approx;{{tour.duration}}</small></h3>
+        </div>
         <ul class="list-unstyled mt-3 mb-4">
           <li v-for="checkpoint in tour.checkpoints" :key="checkpoint.id">{{checkpoint.name}}</li>
         </ul>

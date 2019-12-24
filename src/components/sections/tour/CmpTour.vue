@@ -13,8 +13,7 @@
     </div>
 
     <div>
-        <strong>Price: </strong>{{tour.price}}
-        <strong>Rating: </strong>{{tour.rating}}/5
+        <strong>Rating: </strong>{{tour.rating}}/<small>5</small>
     </div>
 
     <div>
@@ -37,7 +36,7 @@
 
   <div v-if="full" class="mx-auto text-center paths">
     Promocode for "{{privateStop.name}}": 
-    <span v-for="stop in stopsWPromo" :key="stop.promo">
+    <span v-for="stop in stopsWPromo" :key="stop.promo" class="font-weight-bold">
       <span v-if="stop.checked">{{stop.promo}}</span>
       <span v-else>*</span>
     </span>
@@ -101,6 +100,9 @@ export default {
   },
   destroyed () {
     window.removeEventListener('scroll', this.scroller);
+  },
+  mounted () {
+    window.scrollTo(0, 0)
   }
 }
 </script>
