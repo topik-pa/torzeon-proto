@@ -1,9 +1,9 @@
 <template>
   <div> 
-    <cmp-intro/>
-    <cmp-find-by/>
+    <cmp-intro/>    
     <cmp-tours-near-you/>
     <cmp-top-tours/>
+    <cmp-find-by/>
     <cmp-browse-all/>
   </div>
 </template>

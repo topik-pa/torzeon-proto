@@ -5,24 +5,24 @@
       <h2 class="display-5">{{shop.description}}</h2>
 
 
-        <p>{{shop.address}}</p>
-        <p>{{shop.tel}}</p>
-        <p>{{shop.website}}</p>
+        <p>{{shop.address}}<br/>
+        {{shop.tel}}<br/>
+        {{shop.website}}</p>
   
 
 
       <section>
         <h3>Available services</h3>
-        <div v-for="(value, key, index) in shop.amenities" :key="index">
-          {{ key }} - {{ value }}
+        <div v-for="(value, key, index) in shop.amenities" :key="index" :class="{'active': value}" class="service">
+          {{ key }}
         </div>
       </section>
 
 
       <section>
         <h3>Spoken languages</h3>
-        <div v-for="(value, key, index) in shop.languages" :key="index">
-          {{ key }} - {{ value }}
+        <div v-for="(value, key, index) in shop.languages" :key="index" :class="{'active': value}" class="service">
+          {{ key }}
         </div>
       </section>
 
@@ -67,5 +67,10 @@ export default {
 </script>
 
 <style scoped>
-
+  .service {
+    color: red;
+  }
+  .active {
+    color: green;
+  }
 </style>
